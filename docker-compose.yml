@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  sweproject-db:
+    image: postgres:15
+    container_name: sweproject-db
+    environment:
+      POSTGRES_DB: sweproject
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpass
+    ports:
+      - "5431:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
